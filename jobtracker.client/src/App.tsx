@@ -11,11 +11,14 @@ interface JobApplication {
 
 function App() {
     const [applications, setApplications] = useState<JobApplication[]>([]);
-
+    
     useEffect(() => {
-        fetch('/api/JobApplications')
-            .then(res => res.json())
-            .then(setApplications);
+        const loadData = async () => {
+            const res = await fetch('https://localhost:7299/api/JobApplications');
+            const data = await res.json();
+            setApplications(data);
+        };
+        loadData();
     }, []);
 
     return (
