@@ -32,7 +32,7 @@ fetch('https://localhost:7299/api/JobApplications').then(r=>r.json()).then(conso
 ```
 
 **POST Test**:
-
+```
 fetch('https://localhost:7299/api/JobApplications', {
   method: 'POST',
   headers: {'Content-Type': 'application/json'},
@@ -44,3 +44,4 @@ fetch('https://localhost:7299/api/JobApplications', {
     notes: 'Portfolio project demo'
   })
 }).then(r => r.json()).then(console.log)
+```
